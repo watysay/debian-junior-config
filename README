@@ -1,0 +1,11 @@
+This is the attempt to create a Debian Junior Live ISO.
+
+This is a combination of Debian Junior <https://wiki.debian.org/DebianJr> and their documentation of Live CD creation. This documentation appeared outdated so I tried to port it to recent (2021) packages.
+
+Original config files for DebianJr using live-helper are located at <https://github.com/debian-live/config-junior.git>.
+
+I took inspiration from subdirectory from the live-images project at <https://salsa.debian.org/live-team/live-images.git> for existing options.
+
+More information about live-build and the Live Systems project can be found on
+its homepage at <https://wiki.debian.org/DebianLive> and in the manual at
+<https://live-team.pages.debian.net/live-manual/>.
