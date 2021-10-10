@@ -2,21 +2,22 @@
 
 set -e
 
-case "$(dpkg --print-architecture)" in
-	amd64)
-		_SOURCE="true"
-		;;
-
-	i386)
-		_SOURCE="false"
-		;;
-esac
-
 lb config noauto \
 	--clean \
-	--ignore-system-defaults \
+	--architectures amd64 \
+  --apt apt \
+  --apt-recommends true \
+  --iso-application "Debian Junior Live" \
+  --memtest none \
 	--mode debian \
 	--debian-installer live \
-	--linux-packages "linux-image linux-headers" \
-	--source "${_SOURCE}" \
+  --bootappend-live \
+    "boot=live \
+     autologin \
+     lang=fr_FR.UTF-8 \
+     locales=fr_FR.UTF-8 \
+     keyboard-layouts=fr \
+     keyboard-model=pc105 \
+     timezone=Europe/Paris \
+     utc=yes" \
 "${@}"
